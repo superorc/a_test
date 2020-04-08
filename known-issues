@@ -1,0 +1,6 @@
+Pulling docker_registry (registry:2)...
+ERROR: Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io on 192.168.1.1:53: read udp 192.168.1.205:58317->192.168.1.1:53: i/o timeout
+
+retry
+------
+
