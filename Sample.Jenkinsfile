@@ -9,7 +9,7 @@ node () {
     }
 
     stage("Get src form king's repo") {
-        git branch: '*/job', 
+        git branch: '*/job',
         url: 'https://github.com/superorc/a_test.git'
     }
 
