@@ -35,7 +35,7 @@ services:
         depends_on: 
             jenkins-master:
                 condition: service_healthy
-        command: wget http://jenkins-master:8080/jnlpJars/jenkins-cli.jar
+        #command: wget http://jenkins-master:8080/jnlpJars/jenkins-cli.jar
 
 volumes:
     jenkins_home: {}

@@ -1,3 +1,9 @@
 FROM alpine:latest
 
-RUN apk add wget
+RUN apk add wget bash
+
+COPY ./add_job.sh /root/.jenkins/add_job.sh
+
+SHELL ["/bin/bash"]
+
+CMD /root/.jenkins/add_job.sh
