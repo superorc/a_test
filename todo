@@ -3,3 +3,38 @@
 3. В Jenkins должен самостоятельно добавляться Job - скриптом или иным способом
 4. Job должен собирать любой Docker образ (например, hello-world), который лежит в этом же репозитории и класть образ в Docker registry из п.2
 5. Написать инструкцию по установке всего необходимого и запуску
+
+
+
+
+найти как юзать jenkins-cli для добавления джоб
+ЛУЧШЕ дслеать докерфайл для дженкинса с копированием джобы
+
+
+# sintax check
+# /build@tmp/durable-9ee5b07d/script.sh: 1: /build@tmp/durable-9ee5b07d/script.sh: docker: not found
+
+docker run --rm -v $(pwd)/Sample.Jenkinsfile:/workspace/Jenkinsfile jenkins4eval/jenkinsfile-runner
+
+
+
+при старте свежего контейнера дженкиса /var/jenkins_home пустой, если выставить cmd
+    
+    - посомтреть что делает
+    ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/jenkins.sh"]
+
+
+(доне)нужно поправить дженкисн мастер, сделалть докр ин докер / или спользовать kaniko # канико лесом - нужен оркестратор енджин
+# попробовать подмана
+
+# нет пакетов для 9 дебиана подмана
+# https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/
+
+root@aaf568266653:/# docker ps
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+исправлено, пользую какой-то катченый образ, потратил много времени уже) пушкат
+----
+
+осталось добавление женского файла из репы в контенйер мастера и создать джобу через клиентского контейнера, изи
+---

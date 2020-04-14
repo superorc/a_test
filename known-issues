@@ -4,3 +4,12 @@ ERROR: Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.
 retry
 ------
 
+Step 8/8 : RUN /tmp/install_podman.sh
+ ---> Running in aea79c1658aa
+/tmp/install_podman.sh: 1: /tmp/install_podman.sh: !#/bin/bash: not found
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0Warning: apt-key output should not be parsed (stdout is not a terminal)
+100  1103    0  1103    0     0   1519      0 --:--:-- --:--:-- --:--:--  1519
+gpg: no valid OpenPGP data found.
+

@@ -1,18 +1,41 @@
-version: '2.0'
-services: 
-    docker_registry:
+version: '2.1'
+services:
+
+    docker-registry:
         image: registry:2
         ports:
         - "5000:5000"
         links:
-        - jenkins_master
-    jenkins_master:
-        image: jenkins/jenkins:lts
+        - jenkins-master
+
+    jenkins-master:
+        build: 
+            context: ./
+            dockerfile: Dockerfile_jenkins
+        environment: 
+            JENKINS_USER: a_user
+            JENKINS_PASS: a_pwd
         ports:
         - "8080:8080"
-        - "50000:50000"
+        #- "50000:50000"
         volumes:
-        - jenkins_home:/var/jenkins_home
+        - jenkins_home:/root/.jenkins
+        # check if port open and accept connections
+        healthcheck:
+            test: ["CMD", "nc", "-z", "-v", "localhost", "8080"]
+            interval: 30s
+            timeout: 10s
+            retries: 5
+        privileged: true
+
+    jenkins-cli:
+        build:
+            context: ./
+            dockerfile: Dockerfile_jenkins_cli
+        depends_on: 
+            jenkins-master:
+                condition: service_healthy
+        command: wget http://jenkins-master:8080/jnlpJars/jenkins-cli.jar
 
 volumes:
     jenkins_home: {}
