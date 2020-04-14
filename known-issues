@@ -13,7 +13,7 @@ Step 8/8 : RUN /tmp/install_podman.sh
 100  1103    0  1103    0     0   1519      0 --:--:-- --:--:-- --:--:--  1519
 gpg: no valid OpenPGP data found.
 
-------
+---
 
 Джоба может быть добавлена через xml =((((
 
@@ -28,7 +28,7 @@ jenkins-cli_1      |  --password-file VAL : File that contains the password
 
 fixed # сделал руками джобу и забрал хмэль конфиг
 
-----
+---
 jenkins-cli_1      | injecting job config
 jenkins-cli_1      | 
 jenkins-cli_1      | ERROR: Job 'a_pipeline_poc' already exists
@@ -36,7 +36,7 @@ jenkins-cli_1      | ERROR: Job 'a_pipeline_poc' already exists
     ./clean_up.sh
 
 
-----
+---
 jenkins-cli_1      | building target pipeline
 jenkins-cli_1      | java.io.IOException: Server returned HTTP response code: 503 for URL: http://jenkins-master:8080/cli?remoting=false
 jenkins-cli_1      |    at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1919)
@@ -45,3 +45,10 @@ jenkins-cli_1      |    at hudson.cli.FullDuplexHttpStream.<init>(FullDuplexHttp
 jenkins-cli_1      |    at hudson.cli.CLI.plainHttpConnection(CLI.java:668)
 jenkins-cli_1      |    at hudson.cli.CLI._main(CLI.java:628)
 jenkins-cli_1      |    at hudson.cli.CLI.main(CLI.java:427)
+
+---
+jenkins-cli_1      | injecting job config
+jenkins-cli_1      | 
+jenkins-cli_1      | ERROR: Job 'a_pipeline_poc' already exists
+
+    Run ./clenup.sh

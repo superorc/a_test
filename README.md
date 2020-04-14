@@ -8,6 +8,14 @@ Install it via pkg manager
 
     docker-compose
 
+
+### Start
+
+Run this to apply me to the job
+
+    ./RUN_ME.sh
+
+
 ### Start registry, master and client
 
     docker-compose up --build
