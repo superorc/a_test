@@ -1,8 +1,12 @@
 FROM alpine:latest
 
-RUN apk add wget bash
+RUN apk add wget bash openjdk11
 
+# copy entrypoint script
 COPY ./add_job.sh /root/.jenkins/add_job.sh
+
+# cope our job to container
+COPY ./Sample.Jenkinsfile /root/.jenkins/Sample.Jenkinsfile
 
 SHELL ["/bin/bash"]
 
