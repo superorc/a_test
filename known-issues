@@ -13,3 +13,24 @@ Step 8/8 : RUN /tmp/install_podman.sh
 100  1103    0  1103    0     0   1519      0 --:--:-- --:--:-- --:--:--  1519
 gpg: no valid OpenPGP data found.
 
+------
+
+Джоба может быть добавлена через xml =((((
+
+jenkins-cli_1      | ERROR: "--help" is not a valid option
+jenkins-cli_1      | java -jar jenkins-cli.jar create-job NAME [--username VAL] [--password VAL] [--password-file VAL]
+jenkins-cli_1      | Creates a new job by reading stdin as a configuration XML file.
+jenkins-cli_1      |  NAME                : Name of the job to create
+jenkins-cli_1      |  --username VAL      : User name to authenticate yourself to Jenkins
+jenkins-cli_1      |  --password VAL      : Password for authentication. Note that passing a
+jenkins-cli_1      |                        password in arguments is insecure.
+jenkins-cli_1      |  --password-file VAL : File that contains the password
+
+fixed # сделал руками джобу и забрал хмэль конфиг
+
+----
+jenkins-cli_1      | injecting job config
+jenkins-cli_1      | 
+jenkins-cli_1      | ERROR: Job 'a_pipeline_poc' already exists
+
+    ./clean_up.sh
