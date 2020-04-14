@@ -1,21 +1,20 @@
 # test task
 
-## Run jenkins and registry
 
-        $ ./init_setup.sh
+### Dependencies
+Install it via pkg manager
 
-You will be promted for password and few clicks like "temp password is: d5029c6802754470b970929daf8e1802 got to http://localhost:8080 , enter temp password and click Install suggested plugins". Do it and wait until all sugested pluggins are installed.
+    docker
 
-Jenkins admin password is writed down to `jenkins_pwd` file in current dir
+    docker-compose
 
-After this you will see the form with creating user. Just click Continiue as admin on the right bot corner.
+### Start registry, master and client
 
-On the Instance Configuration screen click on "save and finish".
+    docker-compose up --build
 
-You can see "Jenkins is ready!" screen if you done right, click "start using jenkins"
+It will run jenkins master on http://localhost:8080, creds are (could be changed in compose file):
 
-### If you didn't saw "Welcome to Jenkins!", run
+    user: a_user
+    passsd: a_pwd
 
-        $ ./cleanup.sh
-
-and proceed with step 1
+as well as jenkins_cli container, it will download jar client from master end exit( at this step)
