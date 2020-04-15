@@ -11,10 +11,11 @@ Install it via pkg manager
 
 ### Start
 
-Clenup docker volumes and run docker compose (client container with exet with non zero with job already exists)
+Clenup docker volumes and run docker compose (client container will exit with non zero if job already exists)
 
     ./RUN_ME.sh
 
+Check script output https://pastebin.com/JuHf4cGh
 
 ### Start registry, master and client
 
