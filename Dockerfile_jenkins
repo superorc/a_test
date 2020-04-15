@@ -12,6 +12,8 @@ RUN apt-get update
 
 RUN apt-get install netcat -y
 
+# add certificate
+COPY ./certs/domain.crt /etc/docker/certs.d/docker-registry:443/ca.crt
 #COPY ./roles /etc/ansible/roles
 
 # install docker-ce via ansible role

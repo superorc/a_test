@@ -19,7 +19,7 @@ node () {
     }
 
     stage("Build docker image") {
-        docker.withRegistry('http://docker-registry:5000') {
+        docker.withRegistry('https://docker-registry:443') {
 
             def img = docker.build("kotlin-1.3.71:${env.BUILD_ID}")
             img.push()
