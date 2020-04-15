@@ -16,8 +16,10 @@ node () {
             branches: [[name: '*/job']], 
             userRemoteConfigs: [[url: 'https://github.com/superorc/a_test.git']]
         ])
-        //git branch: '*/job',
-        //url: 'https://github.com/superorc/a_test.git'
+    }
+
+    stage("Build docker image") {
+        def img = docker.build("kotlin-1.3.71:${env.BUILD_ID}")
     }
 
 }
