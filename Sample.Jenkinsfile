@@ -11,8 +11,13 @@ node () {
     }
 
     stage("Get src form  CI_king's repo") {
-        git branch: '*/job',
-        url: 'https://github.com/superorc/a_test.git'
+        checkout(
+            [$class: 'GitSCM', 
+            branches: [[name: '*/job']], 
+            userRemoteConfigs: [[url: 'https://github.com/superorc/a_test.git']]
+        ])
+        //git branch: '*/job',
+        //url: 'https://github.com/superorc/a_test.git'
     }
 
 }
