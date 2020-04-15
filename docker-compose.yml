@@ -2,9 +2,17 @@ version: '2.1'
 services:
 
     docker-registry:
-        image: registry:2
+        #image: registry:2
+        build:
+            context: ./
+            dockerfile: Dockerfile_registry
+        domainname: a.test
         ports:
-        - "5000:5000"
+        - "443:443"
+        environment: 
+            REGISTRY_HTTP_ADDR: 0.0.0.0:443
+            REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
+            REGISTRY_HTTP_TLS_KEY: /certs/domain.key
         links:
         - jenkins-master
 
