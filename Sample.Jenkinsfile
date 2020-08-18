@@ -3,6 +3,9 @@
 node () {
 
     // TODO add cleanup workspase stage
+    stage("Clean up ws") {
+        cleanWS()
+    }
 
     stage("Test dockerd is avaliable") {
         docker.image('alpine:latest').inside() {
